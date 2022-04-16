@@ -1,0 +1,7 @@
+name: KingdomsPowers
+version: '${project.version}'
+main: com.kingdoms.powers.powers.Powers
+api-version: 1.18
+load: STARTUP
+loadbefore: [ KingdomsKingdoms ]
+authors: [ AndroT ]
