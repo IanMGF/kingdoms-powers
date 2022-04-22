@@ -22,10 +22,12 @@ class PowersTest {
                         Player = class:fromName("org.bukkit.entity.Player")
                                     
                         function onEntityDamage(event)
-                          if event:getEntityType():equals(EntityType.PLAYER) then
-                            entity = event:getEntity()
-                            player = class:cast(event:getEntity(), Player)
-                            player:setLevel(player:getLevel() + 5)
+                          entity = event:getEntity()
+                          if tags:hasTag("powers.power")
+                            if event:getEntityType():equals(EntityType.PLAYER) then
+                              player = class:cast(event:getEntity(), Player)
+                              player:setLevel(player:getLevel() + 5)
+                            end
                           end
                         end
                                     
@@ -55,8 +57,13 @@ class PowersTest {
 
     @Test
     void loadLuaEventListener() {
-
         plugin.loadLuaEventListener(script);
+
+        player.setLevel(0);
+        player.damage(1);
+        assertEquals(0, player.getLevel());
+
+        Powers.tagManager.addTag(player, "powers.power");
         player.setLevel(0);
         player.damage(1);
         assertEquals(5, player.getLevel());

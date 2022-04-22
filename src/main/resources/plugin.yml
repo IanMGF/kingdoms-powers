@@ -3,5 +3,6 @@ version: '${project.version}'
 main: com.kingdoms.powers.powers.Powers
 api-version: 1.18
 load: STARTUP
+depend: [ KingdomsTags ]
 loadbefore: [ KingdomsKingdoms ]
 authors: [ AndroT ]

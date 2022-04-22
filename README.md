@@ -7,7 +7,7 @@ criado para suportar novas mecânicas integrando a API `Event`
 ---
 Padrão de Scripts
 ---
-## Todos os scripts devem recorrer a um mesmo padrão
+##Todos os scripts devem recorrer a um mesmo padrão
 Todos os scripts lidos pelo plugin devem recorrer a um
 mesmo padrão, retornando uma tabela contendo o elemento
 `"events"`.
@@ -33,7 +33,7 @@ return script_table
 ```
 
 
-### Aonde: 
+###Aonde: 
 
 - O nome de `onSpigotEvent` é reposto por um nome intuitivo
 ao evento
@@ -75,7 +75,8 @@ script_table = {
 return script_table
 ```
 
-### O Jogador perde 1 de vida (0.5 coração) ao consumir itens
+---
+###O Jogador perde 1 de vida (0.5 coração) ao consumir itens
 
 ```
 function onPlayerItemConsume(event)
